@@ -1,0 +1,49 @@
+body{
+    background-color: rgb(149, 165, 180);
+    font-size: 1.4em;
+}
+
+form{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: white;
+    padding-left:30px;
+    padding-right: 40px;
+    padding-top: 15px;
+    padding-bottom: 10px;
+
+    margin-right: 200px;
+    margin-top: 80px;
+    margin-left: 100px;
+    margin-bottom: 40px;
+
+    border-radius: 0.3cm;
+    border-color: rgb(194, 191, 191);
+    border-style: solid;
+    border-width: 0.01em;
+}
+
+h1{
+    color: rgb(54, 49, 49);
+    font-size: 7mm;
+    margin-bottom: 3mm;
+}
+
+h2{
+    color: rgb(105, 97, 97);
+    font-size: 0.6em;
+    margin-top:0px;
+    margin-bottom: 1px;
+}
+
+input{
+    font-size: 20px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+p{
+    font-size: 0.7em;
+    text-align: left;
+    padding-top: 10px;
+}

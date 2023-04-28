@@ -1,0 +1,89 @@
+body {
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(245, 242, 242);
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: space-around;
+}
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: inherit;
+}
+
+h1 {
+  padding-left: 5%;
+  margin-bottom: 0%;
+  font-size: 2.5rem;
+}
+
+h2 {
+  padding: 1% 5%;
+  margin-top: 0%;
+  margin-bottom: 1%;
+  font-size: 1.4rem;
+  color: grey;
+  font-style: italic;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+div.panel {
+  border: 0.01rem rgb(194, 191, 191);
+  border-style: inherit;
+  background-color: white;
+  margin-left: 5%;
+  padding: 2%;
+  width: 15%;
+  height: auto;
+}
+img {
+  background-color: white;
+  width: 100%;
+  height: auto;
+  margin-bottom: 0%;
+}
+p {
+  color: grey;
+  font-style: italic;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding-left: 5%;
+  margin-top: 3%;
+}
+h3 {
+  padding-left: 5%;
+  font-size: 1.02rem;
+  margin-bottom: 0;
+}
+div.Stars {
+  padding-left: 5%;
+  margin-bottom: 10%;
+}
+i {
+  color: green;
+}
+
+@media screen and (max-width: 1300px) {
+  div.panel {
+    width: 37%;
+    margin:2%;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  div.panel {
+    width: 37%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+  }
+}

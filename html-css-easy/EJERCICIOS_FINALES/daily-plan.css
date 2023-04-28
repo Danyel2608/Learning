@@ -1,0 +1,55 @@
+body{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3mm;
+    margin-right: 40%;
+    margin-left: 20%;
+    padding-left: 0%;
+    border-style: solid;
+    border-top:none ;
+    border-bottom: none;
+    border-width: 0.009mm;
+    border-color: rgb(233, 232, 232);
+}
+h1{
+    padding-left: 5%;
+}
+h2{
+    color: grey;
+    border-style: solid;
+    margin-left: 5%;
+    margin-right: 5%;
+    font-size: 4mm;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-width: 0.1mm;
+    padding-bottom: 4mm;
+    border-color: rgb(190, 190, 190);
+}
+
+h3{
+    background-color: pink;
+    color: white;
+    padding-left: 8%;
+    padding-top: 5%;
+    padding-bottom: 10%;
+    padding-right: 5%;
+    font-size: 4mm;
+    margin-left: 5%;
+    margin-right: 5%;
+    
+}
+
+p{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+li{
+    padding-top: none;
+    padding-bottom: none;
+}
+
+ul{
+    color-scheme: pink;
+}

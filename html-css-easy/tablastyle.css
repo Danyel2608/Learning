@@ -1,0 +1,25 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 5mm;
+  
+}
+
+td {
+  border-style: solid;
+  border-color: black;
+  border-collapse: collapse;
+  border-width: 0.1mm;
+  text-align: center;
+  margin-right: 50%;
+  margin-top: auto;
+  padding-right: 1cm;
+  padding-left: 1cm;
+  padding-top: 1mm;
+  padding-bottom: 1mm;
+}
+
+table {
+  padding: 5%;
+  border-collapse: collapse;
+ 
+}

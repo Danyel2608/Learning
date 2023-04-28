@@ -1,0 +1,36 @@
+body{
+    background-color: black;
+}
+
+form{
+    background-color: rgb(9, 9, 48);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding-left: 15px;
+    padding-top: 0mm;
+    padding-bottom: 30px;
+    margin-right: 350px;
+    border-radius: 0.3cm;
+}
+
+h1{
+    color: white;
+    padding-top: 40px;
+    padding-bottom: 0px;
+    margin-bottom: 0.5px;
+}
+
+h2{
+    color: white;
+    padding-top: 0px;
+    font-size: 4mm;
+    margin-top: 0.5px;
+}
+
+input{
+    background-color:rgb(20, 20, 43);
+    color: grey;
+    border-style: none;
+    padding: 15px;
+    padding-right: 90px;
+    border-radius: 0.3cm;
+}

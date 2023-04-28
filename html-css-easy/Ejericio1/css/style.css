@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "rubik-regular";
+  src: url(../fonts/Rubik-Regular.ttf)
+    format("truetype");
+}
+
+:root {
+  font-size: 1.375em;
+  --dark-blue: #2f3e46;
+}
+.panel {
+  padding: 1em;
+  border-radius: 0, 5 em;
+  border: 1px solid #999;
+  max-width: 70%;
+  margin: 20% auto;
+}
+h2 {
+  font-family: "rubik-regular";
+  margin-top: 0;
+  font-size: 0.8rem;
+  font-weight: bold;
+  background-color: var(--dark-blue);
+  text-transform: uppercase;
+}
+
+.panel-body{
+  font-family: "rubik-regular";
+}
+
+/* ESTO ES PARA LAEL TAMAÑO DE PANTALLA, DEPENDIENDO CAMBIARÁ LA WEB */
+
+@media (min-width: 800px) {
+  .panel {
+    background-color: blue;
+    color: white;
+  }
+}
+@media (min-width: 1200px) {
+  .panel {
+    background-color: #212121;
+  }
+}

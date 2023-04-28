@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Make your order</h1>
+    <br><br>
+    <h2>Please,fill  this form:</h2>
+    
+    <form action="login.php" method="get">
+        <br><input name="username" type="text" placeholder="Your name"><br>
+        <br><input name="email" type="text" placeholder="Your email"><br>
+        <br><br>
+        <textarea placeholder="Write your address for your order" cols="50" rows="15"></textarea> </form>
+
+        <h3>Include salad sarter?</h3>
+        <br><input name="salad?" type="radio" value="Yes"> Yes,include it! <br>
+        <br><input name="salad?" type="radio" value="No" > No,thanks <br>
+
+        
+        <br><label for="main course">Choose your main course</label><br>
+        <select name="Main course" id="#main course">
+            <option value="Grilled Chicken with Fresh Cherry Salsa">Grilled Chicken with Fresh Cherry Salsa</option>
+            <option value="Bombay Grilled Chutney Sandwich">Bombay Grilled Chutney Sandwich</option>
+            <option value="Presian Chicken Joojeh Kebabs">Presian Chicken Joojeh Kebabs</option>
+            <option value="Spicy Pork Vindaloo">Spicy Pork Vindaloo</option>
+            <option value="Bombay Sloppy Joes (Kheema Pav)">Bombay Sloppy Joes (Kheema Pav)</option>
+        </select>
+        <br><br>
+        <input type="checkbox" name="Pay with credit card">Pay with credit card
+        <br><br>
+        <input type="submit" value="Make order"> 
+        
+
+    </form>
+
+
+</body>
+</html>
