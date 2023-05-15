@@ -1,0 +1,50 @@
+//Imported
+@import "./reset";
+@import "./variables";
+@import "./maps";
+@import "./functions";
+
+@mixin flexCenter($justify){
+  //parecido a funciones pero solo puede contener css
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+body {
+  @include flexCenter(center);//Como llamar a ese mixin
+  background-color: $green;
+  width: $full-width;
+  height: $full-height;
+  color: $dark;
+  .main {
+    // width: 80%;
+    // margin: 2em auto; //Horizontal: si no lo comento no me deja poner el justify content
+    border-color: $black;
+    border: 1px solid $dark;
+    border-radius: 0.3rem;
+    
+    &-header {
+      //Está en main y header,es decir,h1
+      font-family: font-family(Titillium);
+      transition: color 0.3s ease-in-out;
+      font-size: map-get($font-sizes, xxx-large);
+      font-weight: titillium-weight("Black"); //De la funcion
+      &:hover {
+        //transicion para cuadno ponga el raton encima de h1
+        color: $orange;
+      }
+    }
+    p {
+      font-family: font-family(Rubik); //De la funcion
+      color: $pampas;
+      font-size: 1.5rem;
+      font-weight: rubik-weight(Light);
+      @for $i from 1 through length($rainbow) {
+        &:nth-child(#{$i+1}){
+          background-color:nth($rainbow,$i);
+        }
+      }
+    }
+  }
+}
