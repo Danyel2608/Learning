@@ -3,27 +3,25 @@
 @import "./variables";
 @import "./maps";
 @import "./functions";
-
-@mixin flexCenter($justify){
-  //parecido a funciones pero solo puede contener css
-  display: flex;
-  justify-content: $justify;
-  align-items: center;
-}
+@import "./mixins";
 
 body {
-  @include flexCenter(center);//Como llamar a ese mixin
+  &.light {
+    @include theme(true);
+  }
+  @include flexCenter(center); //Como llamar a ese mixin
   background-color: $green;
   width: $full-width;
-  height: $full-height;
+  height: auto;
   color: $dark;
+  justify-content: center;
   .main {
-    // width: 80%;
+    width: 80%;
     // margin: 2em auto; //Horizontal: si no lo comento no me deja poner el justify content
     border-color: $black;
     border: 1px solid $dark;
     border-radius: 0.3rem;
-    
+
     &-header {
       //Está en main y header,es decir,h1
       font-family: font-family(Titillium);
@@ -41,10 +39,58 @@ body {
       font-size: 1.5rem;
       font-weight: rubik-weight(Light);
       @for $i from 1 through length($rainbow) {
-        &:nth-child(#{$i+1}){
-          background-color:nth($rainbow,$i);
+        &:nth-child(#{$i}) {
+          background-color: nth($rainbow, $i);
         }
+      }
+      //---------Bucle for al reves,hacia atrás---------//
+      // @for $i from -(length($rainbow)) through -1 {
+      //   &:nth-child(#{-$i+1}){
+      //     background-color:nth($rainbow,$i);
+      //   }
+    }
+
+    .message {
+      padding: 0.8em 1.5em;
+      border-radius: 0.7rem;
+      width: 70%;
+      margin: 2em auto;
+    }
+    .message-info {
+      @extend.message; //Trae todo lo que hay en .masage arriba.
+      //+ lo que añadamos ahora.
+      color: darken($blue, 20%);
+      background-color: lighten($blue, 25%);
+    }
+    .message-danger {
+      @extend.message; //Trae todo lo que hay en .masage arriba.
+      //+ lo que añadamos ahora.
+      color: darken($red, 25%);
+      background-color: lighten($red, 25%);
+    }
+    @each $header, $value in $header-sizes {
+      //Evalua de header-sizes(tamaños de fuente) que hemos creado
+      //en maps para ponerselo en headers,en h1,h2,h3,h4,etc.de manera
+      //como sale en la pagina web.
+      #{$header} {
+        font-size: #{$value};
       }
     }
   }
+}
+//While loop
+$headers: ""; //esto es crear una variable.
+$start: 1;
+$limit: 6;
+
+@while $start <= $limit {
+  //Hacemos funcion while para todos los headers(h1,h2..)
+  //Solo se pone desde donde empieza hasta donde va
+  $headers: $headers + h#{$start}+ ", ";
+  $start: $start +
+    1; //siempre poner el incremento,sino sería bucle infinito
+}
+#{$headers} {
+  //Le damos estilos a esos headers.
+  font-family: font-family(Titillium);
 }

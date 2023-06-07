@@ -1,0 +1,17 @@
+//Se pueden llamar varias veces
+@mixin flexCenter($justify) {
+  //parecido a funciones pero solo puede contener css
+  display: flex;
+  justify-content: $justify;
+  align-items: center;
+}
+
+@mixin theme($light-theme: true) {
+  //lo de entre comillas es un valor por defecto
+  @if ($light-theme) {
+    background-color: lighten($bg-color, 50%);
+    p {
+      color: darken($bg-color, $amount: 25%) !important;
+    }
+  }
+}
