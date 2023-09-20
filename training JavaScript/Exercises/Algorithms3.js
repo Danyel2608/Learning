@@ -43,11 +43,17 @@ const exercise2 = () => {
   };
 
   if (hours >= 5 && hours < 12) {
-    console.log(greeting.Morning);
+    if (minutes < 59 && minutes > 0) {
+      console.log(greeting.Morning);
+    }
   } else if (hours >= 12 && hours < 15) {
-    console.log(greeting.Afternoon);
+    if (minutes < 59 && minutes > 0) {
+      console.log(greeting.Afternoon);
+    }
   } else {
-    console.log(greeting.Evening);
+    if (minutes < 59 && minutes > 0) {
+      console.log(greeting.Evening);
+    }
   }
 };
 
@@ -266,7 +272,7 @@ const exercise5 = () => {
   let num_matriculas = prompt("¿Cuantas matriculas?");
 
   for (let index = 1; index <= num_matriculas; index++) {
-    let min = 0000;
+    let min = 0;
     let max = 9999;
     function getRandomInt(min, max) {
       min = Math.ceil(min);
@@ -375,12 +381,14 @@ const exercise7 = () => {
 };
 
 const exercise8 = () => {
-  let play = prompt("Do you like play game?");
+  let play = prompt("Do you like play game? Yes(Y)/No(N)");
   let description;
   if (play == "Y") {
     description = alert(
       "The game consist in win with your cart. If you cart is better that bank you win."
     );
+  } else {
+    description = prompt("End of game,will see you again!");
   }
   let saldoInicial = 500;
   while (saldoInicial > 0 && play == "Y") {
@@ -543,7 +551,7 @@ const exercise8 = () => {
       console.log("Invalid bet,try again.");
     } else {
       console.log("Carta de la banca: " + carts + " de " + palos);
-      console.log("Tu carta: " + carts1 + " de " + palos1);  
+      console.log("Tu carta: " + carts1 + " de " + palos1);
       if (carts1 > carts) {
         console.log("You win!!");
         saldoInicial = parseInt(saldoInicial) + parseInt(apuesta);
@@ -555,22 +563,25 @@ const exercise8 = () => {
         saldoInicial = saldoInicial - apuesta;
       }
     }
-    console.log("YOUR BALANCE IS: "+saldoInicial+"€");
+    console.log("YOUR BALANCE IS: " + saldoInicial + "€");
 
     if (saldoInicial == 0) {
       play === "N";
     } else {
-      play = prompt("Do you like play other game or exit?");
+      play = prompt("Do you like play other game or exit? (YES OR EXIT)");
 
       if (play == "EXIT") {
         if (saldoInicial > 500) {
           console.log(
-            "%cYour proffit is +" + ((saldoInicial - 500)+"€"),
+            "%cYour proffit is +" + (saldoInicial - 500 + "€"),
             "color:#008f39"
           );
           play === "N";
         } else if (saldoInicial < 500 && saldoInicial > 0) {
-          console.log("%cYou lost -" + ((500 - saldoInicial)+"€"), "color:#ff0000");
+          console.log(
+            "%cYou lost -" + (500 - saldoInicial + "€"),
+            "color:#ff0000"
+          );
           play === "N";
         }
       }
@@ -581,21 +592,64 @@ const exercise8 = () => {
   }
 };
 
-const exercise9 = ()=>{
-  let frase=prompt("Escribe una frase");
-  let respuesta=prompt("Cifrar o descifrar");
-  let desplazamiento=prompt("¿Cual es el desplazamiento?");
-
-  let Abecedario=['a','b','c','d','e','f','g','h','i','j','k','l', 'ñ','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-
-  if (respuesta=="cifrar") {
-    for (let index = 0; index < Abecedario.length; index+desplazamiento){
-      frase=frase.replaceAll(Abecedario[index],Abecedario[desplazamiento]);
-      console.log(frase);
-    }
-  }else{
-    console.log(frase);
-  }
+  const exercise9 = () => {
+    let text=prompt("Write text");
+    let encode=prompt("¿Cifrar? (Yes/No)");
+    const cipher = (encode, text) => {
+      if (encode=="Yes") {
+        // encode
+        text = [...text].map((letter) => {
+          switch (letter.charCodeAt(0)) {
+            // uppers
+            case 88: // x
+              return String.fromCharCode(65);
+            case 89: // y
+              return String.fromCharCode(66);
+            case 90: // z
+              return String.fromCharCode(67);
+            //lowers
+            case 120: // x
+              return String.fromCharCode(97);
+            case 121: // y
+              return String.fromCharCode(98);
+            case 122: // z
+              return String.fromCharCode(99);
+            //whitespace
+            case 32:
+              return String.fromCharCode(32);
+            // the rest of letters
+            default:
+              return String.fromCharCode(letter.charCodeAt(0) + 3);
+          }
+        });
+      } else {
+        // decode
+        text = [...text].map((letter) => {
+          switch (letter.charCodeAt(0)) {
+            // uppers
+            case 65:
+              return String.fromCharCode(88);
+            case 66:
+              return String.fromCharCode(89);
+            case 67:
+              return String.fromCharCode(90);
+            //lowers
+            case 97:
+              return String.fromCharCode(120);
+            case 98:
+              return String.fromCharCode(121);
+            case 99:
+              return String.fromCharCode(122);
+            case 32:
+              return String.fromCharCode(32);
   
-}
+            default:
+              return String.fromCharCode(letter.charCodeAt(0) - 3);
+          }
+        });
+      }
+      console.log(text.join(""));
+    };
+    cipher(encode, text);
+  };
 exercise9();

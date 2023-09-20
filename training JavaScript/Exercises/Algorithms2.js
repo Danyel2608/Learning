@@ -146,10 +146,9 @@ function stringManager(message, menu) {
 
 //======================================================================
 
-const exercise6 = () => {
+const exercise6 = () => {//COREEGIR 
   let string = prompt("Write something");
-  let String = string.replaceAll(" ", ",");
-  let String1 = String.split(",");
+  let String1 = string.replaceAll(" ", ",").split(",");
   let Lenght1 = String1.length;
   console.log(String1);
 
@@ -182,26 +181,27 @@ const exercise6 = () => {
 
 const exercise7 = () => {
   let math = Math.floor(Math.random() * (10 - 1 + 1) * 1);
+  console.log(math);
   let num = prompt("Write a number under 0-10");
   let intentos = 3;
   if (num >= 0 && num <= 10) {
     while (math != num && intentos > 1) {
-      console.log("Try it again");
+      alert("Try it again");
       intentos--;
-      console.log("Te quedan " + intentos + " intentos");
+      alert("Te quedan " + intentos + " intentos");
       num = prompt("Write a number under 0-10 again");
     }
     if (math == num) {
-      console.log("You win!!");
+      alert("You win!!");
     } else if (math != num && intentos <= 4) {
-      console.log("Sorry,Good luck in love");
+      alert("Sorry,Good luck in love");
     }
   } else {
-    console.log("Error,you must read instructions again");
+    alert("Error,you must read instructions again");
   }
 };
 
-const exercise8 = () => {
+const exercise8 = () => {//CORREGIR
   let userName = prompt("Write your userName");
   let password = prompt("Choose your password");
   let validPassword =
